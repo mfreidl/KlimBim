@@ -1,7 +1,7 @@
 /* Services Section
 --------------------------------*/
 #services {
-  background: #fff;
+  background: #F7F7F7FF;
   background-size: cover;
   padding: 80px 0 60px 0;
 }
@@ -70,4 +70,10 @@
 #services .description {
   font-size: 14px;
   line-height: 24px;
+}
+
+#services .section-title{
+  font-family: "Lucida Handwriting", sans-serif;
+  margin-bottom: 80px;
+  text-align: center;
 }

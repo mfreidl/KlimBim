@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+const glightbox = require('glightbox');
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit(): void {
+  items: Array<{id: string}> = [{id: ""},{id: ""},{id: ""},{id: ""},{id: ""},{id: ""}];
+
+  portfolioLightbox:any;
+  ngOnInit(){
+
+    this.portfolioLightbox = glightbox({
+      selector: '.portfolio-lightbox'
+    });
+
   }
 
 }

@@ -1,0 +1,88 @@
+
+<div *ngIf="currentArticle" class="edit-form">
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="currentArticle.name"
+        name="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="currentArticle.description"
+        name="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="mengeneinheit">Mengeneinheit</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mengeneinheit"
+        [(ngModel)]="currentArticle.mengeneinheit"
+        name="mengeneinheit"
+      />
+    </div>
+    <div class="form-group">
+      <label for="bruttoPrice">Brutto Preis</label>
+      <input
+        type="text"
+        class="form-control"
+        id="bruttoPrice"
+        [(ngModel)]="currentArticle.bruttoPrice"
+        name="bruttoPrice"
+      />
+    </div>
+    <div class="form-group">
+      <label for="nettoPrice">Netto Preis</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nettoPrice"
+        [(ngModel)]="currentArticle.nettoPrice"
+        name="nettoPrice"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Kunde</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="currentArticle.name"
+        name="name"
+      />
+    </div>
+
+  </form>
+
+  <button class="btn btn-danger" (click)="deleteArticle()">
+    Löschen
+  </button>
+
+  <button type="submit" class="btn btn-primary" (click)="updateArticle()">
+    Update
+  </button>
+  <button
+    *ngIf="!currentArticle.published && authService.userData.email == 'mfreidl54@gmail.com'"
+    class="btn btn-warning"
+    (click)="updatePublished(true)"
+  >
+    Erledigt
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentArticle">
+  <br />
+  <p>Cannot access this Article...</p>
+</div>

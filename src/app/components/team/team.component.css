@@ -1,7 +1,7 @@
 /* Team Section
 --------------------------------*/
 #team {
-  background: #fff;
+  background: #F7F7F7FF;
   padding: 80px 0 60px 0;
 }
 
@@ -47,4 +47,20 @@
 #team .member .social i {
   font-size: 18px;
   margin: 0 2px;
+}
+
+#team .section-header{
+  font-family: "Lucida Handwriting", sans-serif;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#team .row{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#team .imagecontainer{
+  margin-right: 130px;
 }

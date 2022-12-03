@@ -1,0 +1,22 @@
+<br>
+<div class="inner-adjust">
+
+  <div class="border-bottom">
+    <h1 class="h2">User Profile</h1>
+  </div>
+  <!-- Show user data when logged in -->
+  <div class="row" *ngIf="authService.userData as user">
+
+    <div class="col-md-12">
+      <div class="media">
+        <div class="media-body">
+          <br>
+          <p>Email: <strong>{{user.email}}</strong></p>
+          <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
