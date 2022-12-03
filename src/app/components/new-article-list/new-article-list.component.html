@@ -1,0 +1,35 @@
+<div class="pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Artikelliste</h1>
+</div>
+<div class="list row">
+  <div class="col-md-6">
+    <br>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let article of newArticles; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveArticle(article, i)"
+      >
+          {{ article.name }}
+      </li>
+    </ul>
+
+    <!--<button class="m-3 btn btn-sm btn-danger" (click)="removeAllArticles()">
+      Remove All
+    </button>-->
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentArticle">
+      <app-article-details
+        (refreshList)="refreshList()"
+        [article]="currentArticle"
+      ></app-article-details>
+    </div>
+
+    <div *ngIf="!currentArticle">
+      <br />
+      <p>Please click on a Article...</p>
+    </div>
+  </div>
+</div>
